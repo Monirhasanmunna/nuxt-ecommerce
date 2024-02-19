@@ -38,7 +38,9 @@
                             <li><a href="blog-single-sidebar.html">Blog Single Sidebar</a></li>
                         </ul>
                     </li>
-                    <li><a href="contact.html">Contact Us</a></li>
+                    <li>
+                        <NuxtLink to="/contact">Contact Us</NuxtLink>
+                    </li>
                 </ul>
             </div>
         </div>
