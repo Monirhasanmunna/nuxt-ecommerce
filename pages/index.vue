@@ -1,6 +1,10 @@
+<script setup>
+ definePageMeta({
+  layout : 'frontend-default'
+ })
+</script>
 <template>
-  <NuxtLayout name="frontend-default">
-    <div>
+  <div>
     <!-- Slider Area -->
     <section class="hero-slider">
       <!-- Single Slider -->
@@ -2016,5 +2020,4 @@
     </section>
     <!-- End Shop Services Area -->
   </div>
-  </NuxtLayout>
 </template>

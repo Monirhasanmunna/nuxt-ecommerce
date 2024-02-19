@@ -17,6 +17,7 @@ export default defineNuxtConfig({
     '~/assets/css/slicknav.min.css',
     '~/assets/css/themify-icons.css',
     '~/assets/css/style.css',
+    '~/assets/css/myStyle.css',
   ],
 
   app: {
