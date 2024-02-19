@@ -1,6 +1,10 @@
 <script setup>
  definePageMeta({
-  layout : 'frontend-default'
+  layout : 'frontend-default',
+ })
+
+ useHead({
+  title : 'Eshop'
  })
 </script>
 <template>

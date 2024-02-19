@@ -5,7 +5,7 @@
             <div class="col-lg-2 col-md-2 col-12">
               <!-- Logo -->
               <div class="logo">
-                <a href="index.html"><img src="/images/logo.png" alt="logo"></a>
+                <NuxtLink to="/"><img src="/images/logo.png" alt="logo"></NuxtLink>
               </div>
               <!--/ End Logo -->
               <!-- Search Form -->
@@ -53,12 +53,12 @@
 
                 <!-- cart -->
                 <div class="sinlge-bar shopping">
-                  <a href="#" class="single-icon"><i class="fa-solid fa-cart-shopping"></i> <span class="total-count">2</span></a>
+                  <NuxtLink to="/cart" class="single-icon"><i class="fa-solid fa-cart-shopping"></i> <span class="total-count">2</span></NuxtLink>
                   <!-- Shopping Item -->
                   <div class="shopping-item">
                     <div class="dropdown-cart-header">
                       <span>2 Items</span>
-                      <a href="#">View Cart</a>
+                      <NuxtLink to="/cart">View Cart</NuxtLink>
                     </div>
                     <ul class="shopping-list">
                       <li>
@@ -92,3 +92,9 @@
         </div>
       </div>
 </template>
+
+<style scoped>
+.router-link-active{
+  background-color: transparent !important;
+}
+</style>

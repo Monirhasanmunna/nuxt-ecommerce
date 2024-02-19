@@ -2,9 +2,16 @@
  definePageMeta({
   layout : 'frontend-layout-two'
  })
+
+ useHead({
+  title : 'Contact Us'
+ })
 </script>
 
 <template>
+
+	<FrontendBreadcrumbs page="Contact" link="/contact" />
+	
     <!-- Start Contact -->
 	<section id="contact-us" class="contact-us section">
 		<div class="container">

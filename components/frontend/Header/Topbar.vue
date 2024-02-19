@@ -20,7 +20,7 @@
                   <li><i class="fa-solid fa-location-dot"></i> Store location</li>
                   <li><i class="fa-regular fa-clock"></i> <a href="#">Daily deal</a></li>
                   <li><i class="fa-regular fa-user"></i><a href="#">My account</a></li>
-                  <li><i class="fa-solid fa-power-off"></i><a href="login.html#">Login</a></li>
+                  <li><i class="fa-solid fa-power-off"></i><NuxtLink to="/login">Login</NuxtLink></li>
                 </ul>
               </div>
               <!-- End Top Right -->
@@ -30,3 +30,9 @@
       </div>
       <!-- End Topbar -->
 </template>
+
+<style scoped>
+.router-link-active{
+  background-color: transparent !important;
+}
+</style>
