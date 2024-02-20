@@ -13,9 +13,8 @@ import {useCounterStore} from '~/store/counter';
 <template>
 
     <FrontendBreadcrumbs page="Cart" link="/cart" />
-	<h3>{{ counterStore.count }}</h3>
-	<button type="button" @click="counterStore.increment" class="btn btn-sm btn-primary">Increment</button>
-    
+	
+
 	<!-- Shopping Cart -->
 	<div class="shopping-cart section">
 		<div class="container">
