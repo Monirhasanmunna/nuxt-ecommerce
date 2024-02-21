@@ -9,6 +9,11 @@ const submitForm = (credentials)=>{
 	useAuth.register(credentials)
 }
 
+onMounted(()=> {
+	reset('registerForm')
+	useAuth.isButtonActive = true
+	useAuth.errors = null
+})
 </script>
 <template>
 
@@ -23,13 +28,14 @@ const submitForm = (credentials)=>{
 							<h2>Register</h2>
 							<p>Please register in order to checkout more quickly</p>
 							<!-- Form -->
-							<FormKit type="form" @submit="submitForm"  submit-lable="Register" :actions="false" >
+							<FormKit type="form" @submit="submitForm" id="registerForm" submit-lable="Register" :actions="false" >
 								<div class="row">
 									<div class="col-12">
 										<FormKit type="text" name="name" label="Your Name" placeholder="Enter Name" validation="required" />
 									</div>
 									<div class="col-12">
 										<FormKit type="email" name="email" label="Email" placeholder="Enter Email" validation="required|email" />
+										<span v-if="useAuth.errors" class="formkit-message">{{ useAuth.errors.email[0] }}</span>
 									</div>
 									<div class="col-12">
 										<FormKit type="password" name="password"  label="Password" placeholder="Enter Password" validation="required|length:8|number" />
@@ -41,7 +47,13 @@ const submitForm = (credentials)=>{
 									<FormKit type="password" name="user_type" value="customer" hidden  />
 									<div class="col-12">
 										<div class="form-group login-btn">
-											<button type="submit" class="btn">Register</button>
+											<button v-if="!useAuth.isButtonActive" type="button" class="btn d-inline-flex justify-content-center align-items-center">
+												<div class="spinner-border text-success" role="status">
+													<span class="visually-hidden">Loading...</span>
+												</div>
+											</button>
+
+											<button v-else type="submit" class="btn">Register</button>
 											<NuxtLink to="/login" class="btn">Login</NuxtLink>
 										</div>
 									</div>
