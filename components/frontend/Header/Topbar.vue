@@ -1,3 +1,14 @@
+<script setup>
+import { authStore } from '~/store/auth';
+const useAuth = authStore();
+
+const logoutfun = ()=>{
+  useAuth.logout();
+}
+
+</script>
+
+
 <template>
     <!-- Topbar -->
     <div class="topbar">
@@ -19,8 +30,11 @@
                 <ul class="list-main">
                   <li><i class="fa-solid fa-location-dot"></i> Store location</li>
                   <li><i class="fa-regular fa-clock"></i> <a href="#">Daily deal</a></li>
-                  <li><i class="fa-regular fa-user"></i><a href="#">My account</a></li>
-                  <li><i class="fa-solid fa-power-off"></i><NuxtLink to="/login">Login</NuxtLink></li>
+                  <li v-if="useAuth.isLogedIn"><i class="fa-regular fa-user"></i><NuxtLink to="/dashboard">My account</NuxtLink></li>
+                  <li><i class="fa-solid fa-power-off"></i>
+                    <button v-if="useAuth.isLogedIn" type="button" @click="logoutfun">Logout</button>
+                    <NuxtLink v-if="!useAuth.isLogedIn" to="/login">Login</NuxtLink>
+                  </li>
                 </ul>
               </div>
               <!-- End Top Right -->

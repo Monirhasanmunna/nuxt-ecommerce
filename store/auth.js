@@ -1,13 +1,17 @@
 import {defineStore} from 'pinia';
 
 export const authStore = defineStore('auth', () => {
-    const errors = ref(null);
+    const registerErrors = ref(null);
+    const loginErrors = ref(null);
     const registerBtn = ref(true);
     const loginBtn = ref(true);
     const accessToken = ref(null);
+    const isLogedIn = ref(false);
 
     // registration function
     const register = async (credencial) =>{
+        registerBtn.value = false;
+
         // credencial submit by api
        const {data:response, pending, error} = await useFetch('http://localhost:8000/api/register', {
             method : 'POST',
@@ -17,13 +21,14 @@ export const authStore = defineStore('auth', () => {
         // toastr message
        if(response.value.status == 200){
         useNuxtApp().$toast.success(`${response.value.message}`);
-        registerBtn.value = false;
+        registerBtn.value = true;
         reset('registerForm')
        }
 
         //push error message
        if(response.value.status == 403){
-        errors.value = response.value.message;
+        registerErrors.value = response.value.message;
+        registerBtn.value = true;
        }
 
     }
@@ -31,6 +36,7 @@ export const authStore = defineStore('auth', () => {
     // login function
     const login = async (credencial) => {
         loginBtn.value = false;
+
         //login credencial submit by api
         const {data:response, pending, error} = await useFetch('http://localhost:8000/api/login', {
             method: "POST",
@@ -44,6 +50,9 @@ export const authStore = defineStore('auth', () => {
             'token' : token,
             'user'  : user
         };
+
+        isLogedIn.value = true;
+        navigateTo('/dashboard');
        }
 
         // toastr message
@@ -55,15 +64,29 @@ export const authStore = defineStore('auth', () => {
         reset('loginForm')
        }
 
+
+
+       if(response.value.status == 403){
+        loginBtn.value = true;
+        loginErrors.value = response.value.message;
+       }
+
+
     }
 
-    return {register, registerBtn, loginBtn, errors, login, accessToken}
-},
-    {
-        persist: {
-            storage: persistedState.cookiesWithOptions({
-            sameSite: 'strict',
-            }),
-        },
+    const logout = () => {
+        accessToken.value = '';
+        isLogedIn.value = false;
+        navigateTo('/login')
     }
+
+    return {register, registerBtn, loginBtn, registerErrors, loginErrors, login, accessToken, isLogedIn, logout}
+},
+    // {
+    //     persist: {
+    //         storage: persistedState.cookiesWithOptions({
+    //         sameSite: 'strict',
+    //         }),
+    //     },
+    // }
 );

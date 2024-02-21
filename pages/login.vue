@@ -1,6 +1,10 @@
 <script setup>
 import {authStore} from '~/store/auth';
-definePageMeta({layout : 'frontend-layout-two'})
+
+definePageMeta({
+	layout : 'frontend-layout-two',
+})
+
 useHead({title : 'Login'})
 const useAuth = authStore();
 
@@ -8,11 +12,13 @@ const submitLogin = (credentials) =>{
 	useAuth.login(credentials)
 }
 
+console.log(useAuth.loginErrors)
+
 </script>
 
 <template>
+<FrontendBreadcrumbs page="Login" link="/login" />
 
-<FrontendBreadcrumbs page="Login" link="/login"/>
     <section class="shop login section">
 			<div class="container">
 				<div class="row"> 
@@ -26,7 +32,7 @@ const submitLogin = (credentials) =>{
 								<div class="row">
 									<div class="col-12">
 										<FormKit type="email" name="email" label="Email" placeholder="Enter Email" validation="required|email" />
-										<span v-if="useAuth.errors" class="formkit-message">{{ useAuth.errors.email[0] }}</span>
+										<span v-if="useAuth.logedInErrors" class="formkit-message">{{ useAuth.logedInErrors }}</span>
 									</div>
 									<div class="col-12">
 										<FormKit type="password" name="password"  label="Password" placeholder="Enter Password" validation="required|length:8|number" />

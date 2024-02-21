@@ -9,11 +9,11 @@ const submitForm = (credentials)=>{
 	useAuth.register(credentials)
 }
 
-onMounted(()=> {
-	reset('registerForm')
-	useAuth.registerBtn = true
-	useAuth.errors = null
-})
+// onMounted(()=> {
+// 	reset('registerForm')
+// 	useAuth.registerBtn = true
+// 	useAuth.registerErrors = null
+// })
 </script>
 <template>
 
@@ -35,7 +35,7 @@ onMounted(()=> {
 									</div>
 									<div class="col-12">
 										<FormKit type="email" name="email" label="Email" placeholder="Enter Email" validation="required|email" />
-										<span v-if="useAuth.errors" class="formkit-message">{{ useAuth.errors.email[0] }}</span>
+										<span v-if="useAuth.registerErrors" class="formkit-message">{{ useAuth.registerErrors.email[0] }}</span>
 									</div>
 									<div class="col-12">
 										<FormKit type="password" name="password"  label="Password" placeholder="Enter Password" validation="required|length:8|number" />
