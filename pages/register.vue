@@ -11,7 +11,7 @@ const submitForm = (credentials)=>{
 
 onMounted(()=> {
 	reset('registerForm')
-	useAuth.isButtonActive = true
+	useAuth.registerBtn = true
 	useAuth.errors = null
 })
 </script>
@@ -47,7 +47,7 @@ onMounted(()=> {
 									<FormKit type="password" name="user_type" value="customer" hidden  />
 									<div class="col-12">
 										<div class="form-group login-btn">
-											<button v-if="!useAuth.isButtonActive" type="button" class="btn d-inline-flex justify-content-center align-items-center">
+											<button v-if="useAuth.registerBtn != true" type="button" class="btn d-inline-flex justify-content-center align-items-center">
 												<div class="spinner-border text-success" role="status">
 													<span class="visually-hidden">Loading...</span>
 												</div>
