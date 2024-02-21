@@ -1,16 +1,14 @@
 <script setup>
- definePageMeta({
-  layout : 'frontend-layout-two'
- })
+import {authStore} from '~/store/auth';
+definePageMeta({layout : 'frontend-layout-two'})
+useHead({title : 'Login'})
+const useAuth = authStore();
 
- useHead({
-  title : 'Login'
- })
 </script>
+
 <template>
 
 <FrontendBreadcrumbs page="Login" link="/login"/>
-
     <section class="shop login section">
 			<div class="container">
 				<div class="row"> 

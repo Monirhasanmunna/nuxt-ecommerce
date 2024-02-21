@@ -1,11 +1,14 @@
 <script setup>
- definePageMeta({
-  layout : 'frontend-layout-two'
- })
+import {authStore} from '~/store/auth';
+definePageMeta({layout : 'frontend-layout-two'})
+useHead({title : 'Register'})
 
- useHead({
-  title : 'Register'
- })
+const useAuth = authStore();
+
+const submitForm = (credentials)=>{
+	useAuth.register(credentials)
+}
+
 </script>
 <template>
 
@@ -20,43 +23,30 @@
 							<h2>Register</h2>
 							<p>Please register in order to checkout more quickly</p>
 							<!-- Form -->
-							<form class="form" method="post" action="#">
+							<FormKit type="form" @submit="submitForm"  submit-lable="Register" :actions="false" >
 								<div class="row">
 									<div class="col-12">
-										<div class="form-group">
-											<label>Your Name<span>*</span></label>
-											<input type="text" name="name" placeholder="" required>
-										</div>
+										<FormKit type="text" name="name" label="Your Name" placeholder="Enter Name" validation="required" />
 									</div>
 									<div class="col-12">
-										<div class="form-group">
-											<label>Your Email<span>*</span></label>
-											<input type="text" name="email" placeholder="" required>
-										</div>
+										<FormKit type="email" name="email" label="Email" placeholder="Enter Email" validation="required|email" />
 									</div>
 									<div class="col-12">
-										<div class="form-group">
-											<label>Your Password<span>*</span></label>
-											<input type="password" name="password" placeholder="" required>
-										</div>
+										<FormKit type="password" name="password"  label="Password" placeholder="Enter Password" validation="required|length:8|number" />
 									</div>
 									<div class="col-12">
-										<div class="form-group">
-											<label>Confirm Password<span>*</span></label>
-											<input type="password" name="password" placeholder="" required>
-										</div>
+										<FormKit type="password" name="password_confirm" label="Confirm Password" placeholder="Enter Password" validation="required|confirm|number" />
 									</div>
+
+									<FormKit type="password" name="user_type" value="customer" hidden  />
 									<div class="col-12">
 										<div class="form-group login-btn">
-											<button class="btn" type="submit">Register</button>
+											<button type="submit" class="btn">Register</button>
 											<NuxtLink to="/login" class="btn">Login</NuxtLink>
-										</div>
-										<div class="checkbox">
-											<label class="checkbox-inline" for="2"><input name="news" id="2" type="checkbox">Sign Up for Newsletter</label>
 										</div>
 									</div>
 								</div>
-							</form>
+							</FormKit>
 							<!--/ End Form -->
 						</div>
 					</div>

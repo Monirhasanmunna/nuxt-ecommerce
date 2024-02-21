@@ -1,5 +1,4 @@
 <script setup>
-import {useCounterStore} from '~/store/counter';
 
  definePageMeta({
   layout : 'frontend-default',
@@ -8,8 +7,6 @@ import {useCounterStore} from '~/store/counter';
  useHead({
   title : 'Eshop'
  })
-
- const counterStore = useCounterStore()
 
 </script>
 <template>

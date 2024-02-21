@@ -1,5 +1,4 @@
 <script setup>
-import {useCounterStore} from '~/store/counter';
  definePageMeta({
   layout : 'frontend-layout-two'
  })
@@ -8,7 +7,6 @@ import {useCounterStore} from '~/store/counter';
   title : 'Cart'
  })
 
- const counterStore = useCounterStore()
 </script>
 <template>
 
