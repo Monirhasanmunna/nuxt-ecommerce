@@ -25,6 +25,7 @@ export default defineNuxtConfig({
     '~/assets/css/themify-icons.css',
     '~/assets/css/style.css',
     '~/assets/css/myStyle.css',
+    '~/assets/css/dashboard.css',
   ],
 
   app: {
@@ -35,7 +36,8 @@ export default defineNuxtConfig({
       ],
 
       script: [
-        {src: "https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js", body:true}
+        {src: "https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js", body:true},
+        {src: "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js", body:true},
       ]
     }
   }
