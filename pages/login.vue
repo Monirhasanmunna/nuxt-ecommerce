@@ -12,8 +12,6 @@ const submitLogin = (credentials) =>{
 	useAuth.login(credentials)
 }
 
-console.log(useAuth.loginErrors)
-
 </script>
 
 <template>
@@ -45,7 +43,7 @@ console.log(useAuth.loginErrors)
 												</div>
 											</button>
 
-											<button v-else class="btn" type="submit">Login</button>
+											<button v-else class="btn btn-primary" type="submit" style="width:110px;">Login</button>
 											<NuxtLink to="/register" class="btn">Register</NuxtLink>
 										</div>
 									</div>

@@ -53,7 +53,7 @@ const submitForm = (credentials)=>{
 												</div>
 											</button>
 
-											<button v-else type="submit" class="btn">Register</button>
+											<button v-else type="submit" class="btn" style="width:140px;">Register</button>
 											<NuxtLink to="/login" class="btn">Login</NuxtLink>
 										</div>
 									</div>
