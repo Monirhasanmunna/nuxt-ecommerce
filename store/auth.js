@@ -70,23 +70,23 @@ export const authStore = defineStore('auth', () => {
         loginBtn.value = true;
         loginErrors.value = response.value.message;
        }
-
-
     }
 
     const logout = () => {
-        accessToken.value = '';
+        accessToken.value = {
+            'token' : null,
+            'user'  : null
+        };
         isLogedIn.value = false;
-        navigateTo('/login')
+        navigateTo('/login');
     }
 
     return {register, registerBtn, loginBtn, registerErrors, loginErrors, login, accessToken, isLogedIn, logout}
 },
-    {
-        persist: {
-            storage: persistedState.cookiesWithOptions({
-            sameSite: 'strict',
-            }),
-        },
-    }
-);
+{
+    persist: {
+        storage: persistedState.cookiesWithOptions({
+          sameSite: 'strict',
+        }),
+      },
+});

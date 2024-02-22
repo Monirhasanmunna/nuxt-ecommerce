@@ -23,7 +23,6 @@ const submitLogin = (credentials) =>{
 					<div class="col-lg-6 offset-lg-3 col-12">
 						<div class="login-form">
 							<h2>Login</h2>
-							{{ useAuth.accessToken }}
 							<p>Please register in order to checkout more quickly</p>
 							<!-- Form -->
 							<FormKit type="form" @submit="submitLogin" id="loginForm" submit-lable="Login" :actions="false">
@@ -43,7 +42,7 @@ const submitLogin = (credentials) =>{
 												</div>
 											</button>
 
-											<button v-else class="btn btn-primary" type="submit" style="width:110px;">Login</button>
+											<button v-else class="btn btn-primary" type="submit">Login</button>
 											<NuxtLink to="/register" class="btn">Register</NuxtLink>
 										</div>
 									</div>

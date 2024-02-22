@@ -26,3 +26,10 @@
         </div>
     </nav>
 </template>
+
+<style scoped>
+.router-link-active{
+    color: #fff;
+    background: #F7941D;
+}
+</style>
