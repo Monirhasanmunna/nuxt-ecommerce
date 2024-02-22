@@ -82,11 +82,11 @@ export const authStore = defineStore('auth', () => {
 
     return {register, registerBtn, loginBtn, registerErrors, loginErrors, login, accessToken, isLogedIn, logout}
 },
-    // {
-    //     persist: {
-    //         storage: persistedState.cookiesWithOptions({
-    //         sameSite: 'strict',
-    //         }),
-    //     },
-    // }
+    {
+        persist: {
+            storage: persistedState.cookiesWithOptions({
+            sameSite: 'strict',
+            }),
+        },
+    }
 );
