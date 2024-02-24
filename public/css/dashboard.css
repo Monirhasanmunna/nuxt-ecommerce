@@ -1,3 +1,50 @@
+
+.btn{
+    border-radius: 5px !important;
+    padding:10px 15px !important;
+    text-transform: capitalize !important;
+}
+
+.btn-primary{
+    background-color: #0B5ED7 !important;
+    color: white !important;
+}
+
+.btn-primary:hover{
+    background-color: #073a88 !important;
+    color: white !important;
+}
+
+.btn-success{
+    background-color: #198754 !important;
+    color: white !important;
+}
+
+.btn-success:hover{
+    background-color: #0b5c36 !important;
+    color: white !important;
+}
+
+.btn-danger{
+    background-color: #DC3545 !important;
+    color: white !important;
+}
+
+.btn-danger:hover{
+    background-color: #c71627 !important;
+    color: white !important;
+}
+
+.btn-info{
+    background-color: #0DCAF0 !important;
+    color: white !important;
+}
+
+.btn-info:hover{
+    background-color: #0992ad !important;
+    color: white !important;
+}
+
 .sidebar{
   width: 250px; 
   min-height: 100vh;
@@ -25,8 +72,12 @@
 .nav .navItem{
     background-color: #2A3F56;
     width: 100%;
-    padding: 7px;
     border-radius: 4px;
+}
+
+.nav .navItem .navLink{
+    padding: 8px;
+    margin: 0px;
 }
 
 .nav .navItem div span{

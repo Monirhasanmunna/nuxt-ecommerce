@@ -1,0 +1,61 @@
+
+<template>
+<div class="table-responsive placeholder-glow rounded" aria-hidden="true" style="background-color: rgb(176, 176, 176);">
+          <table class="table placeholder" >
+            <thead>
+              <tr>
+                <th width="10%" class="p-4"></th>
+                <th></th>
+                <th width="30%"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th></th>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <th></th>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <th></th>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <th></th>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <th></th>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <th></th>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <th></th>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <th></th>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <th></th>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+</template>
