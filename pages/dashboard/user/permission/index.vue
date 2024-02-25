@@ -41,7 +41,7 @@ onMounted(() => usePermission.getPermissions())
             <tbody>
               <tr v-for="(permission, index) in usePermission.permissions" :key="index">
                 <th>{{ index+1 }}</th>
-                <td>{{ permission.name }}</td>
+                <td class="text-capitalize">{{ permission.name }}</td>
                 <td>{{ permission.group_name }}</td>
               </tr>
             </tbody>
